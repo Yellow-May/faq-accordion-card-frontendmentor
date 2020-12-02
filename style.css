@@ -1,0 +1,167 @@
+:root {
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+
+  --ligh-grayish-blue: hsl(240, 5%, 91%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  min-width: fit-content;
+  overflow-y: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(var(--soft-violet), var(--soft-blue));
+  font-size: 81.25%;
+}
+
+.faq-card {
+  height: 30rem;
+  width: 55rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0rem 1rem 2rem #444;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+}
+
+.faq-card .img-box {
+  width: 45%;
+}
+
+.img-box {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: url(./images/bg-pattern-desktop.svg) no-repeat 100% 65%;
+}
+
+.faq-card span {
+  position: absolute;
+  z-index: 100;
+  height: 11rem;
+  width: 10rem;
+  top: 50%;
+  left: -9%;
+  transform: translateY(-20%);
+  background: url(./images/illustration-box-desktop.svg) no-repeat center
+    center/cover;
+}
+
+.img-box img {
+  position: absolute;
+  top: 50%;
+  left: -26%;
+  transform: translateY(-50%) scale(0.95);
+}
+
+.faq-card .faq-list {
+  width: 55%;
+  padding: 6rem 6rem 7rem 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.faq-list h1 {
+  padding-bottom: 1.05rem;
+}
+
+.list-item {
+  border-bottom: thin solid var(--ligh-grayish-blue);
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.list-item h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.list-item h3 span {
+  height: 0.6rem;
+  width: 0.6rem;
+  display: inline-block;
+  pointer-events: none;
+  background: url(./images/icon-arrow-down.svg) no-repeat center center;
+}
+
+.list-item p {
+  padding: 0.5rem 2rem 0 0;
+  display: none;
+  transition: 0.5s;
+}
+
+.list-item:hover h3 {
+  color: var(--soft-red);
+}
+
+@media (max-width: 375px) {
+  .faq-card {
+    width: 90%;
+    height: 35rem;
+    margin-top: 20%;
+
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-card .img-box {
+    width: 100%;
+    height: 20%;
+  }
+
+  .img-box {
+    overflow: visible;
+    width: 100%;
+    background: url(./images/bg-pattern-mobile.svg) no-repeat 50% 50%;
+  }
+
+  .img-box span {
+    display: none;
+  }
+
+  .img-box img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-55%, -55%);
+  }
+
+  .faq-card .faq-list {
+    width: 100%;
+    height: 80%;
+    padding: 2rem 1rem 3rem;
+  }
+
+  .faq-list h1 {
+    align-self: center;
+  }
+}
